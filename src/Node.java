@@ -98,9 +98,6 @@ public class Node {
 	
 	public int findMax(){
 		
-		if(this == null){
-			return 0;
-		}
 		Node tempNode = this;
 		while (tempNode.rightLink != null){
 			tempNode = tempNode.rightLink;
@@ -111,9 +108,6 @@ public class Node {
 	
 	public int findMin(){
 		
-		if(this == null){
-			return 0;
-		}
 		Node tempNode = this;
 		while (tempNode.leftLink != null){
 			tempNode = tempNode.leftLink;

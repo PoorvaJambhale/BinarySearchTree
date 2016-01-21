@@ -20,6 +20,9 @@ public class BinarySearchTree {
 	public Boolean binarySearch(int num) {
 		
 		if(this.rootNode == null) {
+			return false;
+		}
+		if(this.rootNode.value == num) {
 			return true;
 		} else {
 			return this.rootNode.binarySearchNode(num);
