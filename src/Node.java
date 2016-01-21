@@ -121,15 +121,20 @@ public class Node {
 		return tempNode.value;
 	}
 	
-	public Node binarySearchNode(int num) {
+	public Boolean binarySearchNode(int num) {
 		
+		Boolean found = false;
 		if(this.value == num) {
-			return this;
-		} else if (num > this.value) {
-			return this.leftLink.binarySearchNode(num);
+			found = true;
+		} else if (num < this.value) {
+			if (this.leftLink != null) {
+				return this.leftLink.binarySearchNode(num);
+			}
 		} else {
-			return this.rightLink.binarySearchNode(num);
+			if (this.rightLink != null) {
+				return this.rightLink.binarySearchNode(num);
+			}
 		}
-
+		return found;
 	}
 }
