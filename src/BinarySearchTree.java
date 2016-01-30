@@ -7,7 +7,6 @@ public class BinarySearchTree {
 		this.rootNode = null;
 	}
 	
-	
 	public void add(int n){
 		
 		if(this.rootNode == null){
@@ -22,11 +21,32 @@ public class BinarySearchTree {
 		if(this.rootNode == null) {
 			return false;
 		}
-		if(this.rootNode.value == num) {
-			return true;
-		} else {
-			return this.rootNode.binarySearchNode(num);
+		return this.rootNode.binarySearchNode(num);
+	}
+	
+	public int findMax(){
+		//Return -1 is tree is empty.
+		if(this.rootNode == null){
+			return -1;
 		}
+		Node tempNode = this.rootNode;
+		while (tempNode.rightLink != null){
+			tempNode = tempNode.rightLink;
+		}
+		return tempNode.value;
+	}
+	
+	
+	public int findMin(){
+		//Return -1 is tree is empty.
+		if(this.rootNode == null) {
+			return -1;
+		}
+		Node tempNode = this.rootNode;
+		while (tempNode.leftLink != null){
+			tempNode = tempNode.leftLink;
+		}
+		return tempNode.value;
 	}
 	
 	public void printTree(int i){
@@ -57,6 +77,10 @@ public class BinarySearchTree {
 	public static void main(String[] args){
 		
 		BinarySearchTree bst = new BinarySearchTree();
+		int m = bst.findMax();
+		System.out.println("The max is = "+ m);
+		int n = bst.findMin();
+		System.out.println("The min is = "+ n);
 		
 		bst.add(15);
 		bst.add(20);
@@ -74,10 +98,10 @@ public class BinarySearchTree {
 		System.out.println();
 		bst.printTree(4);
 		System.out.println();
-		int max = bst.rootNode.findMax();
+		int max = bst.findMax();
 		System.out.println("The max is = "+max);
 		System.out.println();
-		int min = bst.rootNode.findMin();
+		int min = bst.findMin();
 		System.out.println("The min is = "+min);
 		System.out.println();
 		System.out.println("Binary search for Node with value = 24");
@@ -87,12 +111,17 @@ public class BinarySearchTree {
 			System.out.println("24 was not found");
 		}
 		
-		System.out.println("Binary search for Node with value = 32");
-		if(bst.binarySearch(32)){
-			System.out.println("32 was found!");
+		System.out.println("Binary search for Node with value = 3");
+		if(bst.binarySearch(3)){
+			System.out.println("3 was found!");
 		} else {
-			System.out.println("32 was not found.");
+			System.out.println("3 was not found.");
 		}
-		
+		System.out.println("Binary search for Node with value = 30");
+		if(bst.binarySearch(30)){
+			System.out.println("30 was found!");
+		} else {
+			System.out.println("30 was not found.");
+		}
 	}	
 }

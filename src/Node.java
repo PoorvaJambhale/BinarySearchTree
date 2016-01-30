@@ -20,15 +20,15 @@ public class Node {
 			
 		if (n <= this.value){
 			if (this.leftLink == null){
-				Node newNode = new Node(n);
-				this.leftLink = newNode;
+				//Node newNode = new Node(n);
+				this.leftLink = new Node(n);
 			} else {
 				this.leftLink.addNode(n);
 			}
 		} else {
 			if (this.rightLink == null){
-				Node newNode = new Node(n);
-				this.rightLink = newNode;
+				//Node newNode = new Node(n);
+				this.rightLink = new Node(n);
 			} else {
 				this.rightLink.addNode(n);
 			}
@@ -93,26 +93,6 @@ public class Node {
 				queue.add(node.rightLink);				
 			}
 		}	
-	}
-	
-	
-	public int findMax(){
-		
-		Node tempNode = this;
-		while (tempNode.rightLink != null){
-			tempNode = tempNode.rightLink;
-		}
-		return tempNode.value;
-	}
-	
-	
-	public int findMin(){
-		
-		Node tempNode = this;
-		while (tempNode.leftLink != null){
-			tempNode = tempNode.leftLink;
-		}
-		return tempNode.value;
 	}
 	
 	public Boolean binarySearchNode(int num) {
