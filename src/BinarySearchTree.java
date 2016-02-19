@@ -25,7 +25,7 @@ public class BinarySearchTree {
 	}
 	
 	public int findMax(){
-		//Return -1 is tree is empty.
+		//Return -1 if tree is empty.
 		if(this.rootNode == null){
 			return -1;
 		}
@@ -38,7 +38,7 @@ public class BinarySearchTree {
 	
 	
 	public int findMin(){
-		//Return -1 is tree is empty.
+		//Return -1 if tree is empty.
 		if(this.rootNode == null) {
 			return -1;
 		}

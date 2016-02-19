@@ -20,14 +20,12 @@ public class Node {
 			
 		if (n <= this.value){
 			if (this.leftLink == null){
-				//Node newNode = new Node(n);
 				this.leftLink = new Node(n);
 			} else {
 				this.leftLink.addNode(n);
 			}
 		} else {
 			if (this.rightLink == null){
-				//Node newNode = new Node(n);
 				this.rightLink = new Node(n);
 			} else {
 				this.rightLink.addNode(n);
